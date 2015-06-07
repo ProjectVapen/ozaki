@@ -1,0 +1,68 @@
+@charset "utf-8";
+body {
+	background-color:black;
+	margin: 0;
+	color: white;
+	width: 303px;
+}
+
+h3 {
+	text-align: center;
+}
+
+div#response {
+	text-align: center;
+}
+
+div.battle_img {
+	float: left;
+	width: 140px;
+	margin-left: 1px;
+}
+
+div.vs {
+	float: left;
+	width: 20px;
+	height: 200px;
+	margin-left: 1px;
+}
+
+div.hp {
+	float: left;
+	width: 140px;
+	text-align: center;
+	margin-left: 1px;
+}
+
+div.spc {
+	width: 20px;
+}
+
+.clear {
+	clear:both;
+}
+
+div#battle_btn {
+	margin-left:auto;
+	margin-right:auto;
+}
+
+button.btn {
+    font-weight: bold;
+    padding: 10px 30px;
+    color: white;
+    border-style: none;
+    box-shadow: 2px 2px 3px 1px #666;
+    -moz-box-shadow: 2px 2px 3px 1px #666;
+    -webkit-box-shadow: 2px 2px 3px 1px #666;
+    text-shadow: 1px 1px 2px #000;
+    background: -moz-linear-gradient(bottom, #36d, #248 50%, #36d);
+    background: -webkit-gradient(linear, left bottom, left top, from(#36d), color-stop(0.5, #248), to(#36d));
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+}
+
+button.btn:hover {
+    opacity: 0.8;
+}

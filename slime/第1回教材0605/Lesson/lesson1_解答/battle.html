@@ -1,0 +1,55 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>バトルサンプル</title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="./css/style.css">
+</head>
+<body>
+<!-- バトル情報表示エリア -->
+<h3>バトル！！</h3>
+<div id= "response">
+<div class="battle_img"><img src="./img/user.png" width="80" /></div>
+<div class="vs">VS</div>
+<div class="battle_img"><img src="./img/enemy.png" width="80" /></div>
+<div class="clear" />
+<div class="hp1">プレイヤーの体力 = 1000</div>
+<div class="spc"> </div>
+<div class="hp2">敵の体力 = 1000</div>
+<div class="clear" />
+<!-- ここまで -->
+<!-- バトル実行フォーム -->
+<div id="battle_btn">
+<form method="post" id = 'battle'>
+  <input type="hidden" name="user_id" value="1" />
+  <input type="hidden" name="enemy_id" value="2" />
+  <button class="btn" type="submit" id="battle_start">バトル開始！</button>
+</form>
+</div>
+</div>
+<!-- ここまで -->
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function() {
+  $('#battle_start').click(function() {
+    $.ajax({
+      'url': "http://localhost/lesson1/battle.php",
+      'type':'post',
+      'data':$('form#battle').serialize(),
+      'dataType':'json',
+      'success':function(response){
+        // do something
+          console.log(response);
+          $("#response").append("攻撃が成功しました<p>");
+          $("div.hp1").text("プレイヤーの体力 = " + response['player_hp']);
+          $("div.hp2").text("敵の体力 = " + response['enemy_hp']);
+      }
+
+    });
+      return false;
+
+  });
+});
+</script>
+</body>
+</html>
